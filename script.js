@@ -1,27 +1,3 @@
-Skip to content
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@LuisSteuten 
-Learn Git and GitHub without any code!
-Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
-
-
-vasanthk
-/
-tic-tac-toe-js
-2
-1429
- Code Issues 1 Pull requests 0 Actions Projects 0 Wiki Security Insights
-tic-tac-toe-js/js/tic-tac-toe.js / 
-@vasanthk vasanthk Tic Tac Toe in plain Vanilla JS
-d2c7533 on 20 Dec 2015
-118 lines (110 sloc)  2.58 KB
-  
 /**
  * Tic Tac Toe
  *
@@ -140,15 +116,3 @@ function set() {
 }
 
 init();
-© 2020 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
