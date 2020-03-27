@@ -20,4 +20,5 @@ document.initialize = function() {
 
     // Send request
     request.send()
+    //push
 }
