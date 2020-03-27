@@ -2,37 +2,41 @@
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <title>Test</title>
+    <title>Tic Tac Toe</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
-    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="tictactoe_styles.css" />
   </head>
   <body>
-
     <div>
       <header>
         <a class="title" href="index.html">Luis Superklasse Untertasse</a>
       </header>
     </div>
 
-    <div>
+    <div class="scrolable">
       <div class="btn-container">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="#news">News</a></li>
           <li class="dropdown">
-            <a href="gamelist.html" class="dropbtn">Spiele</a>
+            <a href="javascript:void(0)" class="dropbtn">Spiele</a>
             <div class="dropdown-content">
               <a href="tictactoe.html">TicTacToe</a>
               <a href="#">Link 2</a>
               <a href="#">Link 3</a>
             </div>
           </li>
-          <li><a href="ts3server://62.104.20.26/?port=9990" class="teamspeak_icon">TeamSpeak 3</a></li>
+          <li><a href="ts3server://62.104.20.26/?port=9990">TeamSpeak 3</a></li>
         </ul>
       </div>
     </div>
 
-
-
+    <div class="container">
+      <div id="tictactoe"></div>
+      <div id="player" align="center">
+        <span id="turn" align="">Player X</span>
+      </div>
+    </div>
+    <script type="text/javascript" src="tictactoe.js"></script>
   </body>
 </html>
