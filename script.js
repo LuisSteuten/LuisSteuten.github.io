@@ -42,6 +42,12 @@ document.initialize = function() {
       document.getElementById("totalDeathsNRW").innerHTML += validString(selection.areas[1].totalDeaths);
       document.getElementById("totalRecoveredNRW").innerHTML += validString(selection.areas[1].totalRecovered);
       document.getElementById("lastUpdatedNRW").innerHTML += validString(formatDate(selection.areas[1].lastUpdated));
+
+
+      document.getElementById("totalCasesNiedersachsen").innerHTML += validString(selection.areas[3].totalConfirmed);
+      document.getElementById("totalDeathsNiedersachsen").innerHTML += validString(selection.areas[3].totalDeaths);
+      document.getElementById("totalRecoveredNiedersachsen").innerHTML += validString(selection.areas[3].totalRecovered);
+      document.getElementById("lastUpdatedNiedersachsen").innerHTML += validString(formatDate(selection.areas[3].lastUpdated));
       
     }
     request.send()
