@@ -3,22 +3,53 @@ document.addEventListener('DOMContentLoaded', (event) => {
   });
 
 
+
+function validString(string) {
+  if (string) {
+    return string;
+  } else {
+    return 'Nicht verfügbar';
+  };
+}
+
+const options = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
+function formatDate(date) {
+  date = new Date(date);
+  date = date.toLocaleDateString('de-DE', options);
+  return date
+}
+
 document.initialize = function() {
-    // teamspeakButton = this.getElementsByClassName("teamspeak_button")[0];
-    // console.log(teamspeakButton);
-    // console.log(teamspeakButton.innerHtml);
-
-// Create a request variable and assign a new XMLHttpRequest object to it.
+  
     var request = new XMLHttpRequest()
-
-    // Open a new connection, using the GET request on the URL endpoint
-    request.open('GET', 'https://bing.com/covid/data', true)
-
+    request.open('GET', 'https://cors-anywhere.herokuapp.com/https://bing.com/covid/data')
     request.onload = function() {
-      console.log(this.response)
-    }
+      var obj = JSON.parse(this.response);
+      // console.log(Object.values(obj)[2]);
 
-    // Send request
+      // console.log(obj.areas[4])
+
+      const selection = Object.values(obj)[2].filter(({id}) => id == 'germany')[0]
+      console.log(selection);
+
+      document.getElementById("totalCases").innerHTML += selection.totalConfirmed;
+      document.getElementById("totalDeaths").innerHTML += selection.totalDeaths;
+      document.getElementById("totalRecovered").innerHTML += selection.totalRecovered;
+      document.getElementById("lastUpdated").innerHTML += selection.lastUpdated;
+
+      
+      document.getElementById("totalCasesNRW").innerHTML += validString(selection.areas[1].totalConfirmed);
+      document.getElementById("totalDeathsNRW").innerHTML += validString(selection.areas[1].totalDeaths);
+      document.getElementById("totalRecoveredNRW").innerHTML += validString(selection.areas[1].totalRecovered);
+      document.getElementById("lastUpdatedNRW").innerHTML += validString(formatDate(selection.areas[1].lastUpdated));
+      
+    }
     request.send()
-    //push
+
+//     const proxyurl = "https://cors-anywhere.herokuapp.com/";
+// const url = "https://example.com"; // site that doesn’t send Access-Control-*
+// fetch(proxyurl + url) // https://cors-anywhere.herokuapp.com/https://example.com
+// .then(response => response.text())
+// .then(contents => console.log(contents))
+// .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
 }
